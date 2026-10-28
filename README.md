@@ -8,11 +8,13 @@ A campaign desk for student acquisition: track registrations, attribute referral
 
 **500 registrations · 7 days · ₹2,000 budget**
 
-[Try the demo](#try-it-in-two-minutes) · [Growth plan](public/downloads/Growth-Plan.pdf) · [Video walkthrough](public/downloads/Campus-Relay-Walkthrough.mp4) · [AI worklog](public/downloads/AI-LEARNING-NOTES.md)
+**[Launch Campus Relay ↗](https://growthai-iota.vercel.app/)**
+
+[Growth plan](https://growthai-iota.vercel.app/downloads/Growth-Plan.pdf) · [Video walkthrough](public/downloads/Campus-Relay-Walkthrough.mp4) · [AI worklog](https://growthai-iota.vercel.app/downloads/AI-LEARNING-NOTES.md) · [Quick demo](#try-it-in-two-minutes)
 
 </div>
 
-![Campus Relay dashboard with sample registrations and a recovery recommendation](public/assets/campaign-dashboard.png)
+[![Campus Relay dashboard with sample registrations and a recovery recommendation](public/assets/campaign-dashboard.png)](https://growthai-iota.vercel.app/)
 
 ## The problem
 
@@ -38,13 +40,7 @@ Campus Relay brings those questions into one workflow. Built for the NxtWave Gro
 
 ## Try it in two minutes
 
-```bash
-git clone https://github.com/Sathvik257/Growth-AI.git
-cd Growth-AI
-python -m http.server 8766 --directory public
-```
-
-Open **http://localhost:8766**. No package installation, build step or API key is needed.
+Open **[the live demo](https://growthai-iota.vercel.app/)**. No sign-in or setup is needed. Use fictional details; demo data stays in your browser.
 
 1. Click **Load sample campaign** to load 180 fictional registrations.
 2. Select **Day 6**. See **320 remaining**, **160 per day**, and approximately **4,267 additional people reached** at the planning rates.
@@ -54,6 +50,16 @@ Open **http://localhost:8766**. No package installation, build step or API key i
 6. Try a duplicate email, then export the ledger.
 
 See the [demo guide](public/downloads/DEMO-GUIDE.md) for the full test path. A [single-file portable version](public/downloads/Campus-Relay-Portable.html) is also available; use the server if your browser restricts local-file storage.
+
+## Run locally
+
+```bash
+git clone https://github.com/Sathvik257/Growth-AI.git
+cd Growth-AI
+python -m http.server 8766 --directory public
+```
+
+Open **http://localhost:8766**. No package installation, build step or API key is needed.
 
 ## How the decision engine works
 
@@ -112,6 +118,8 @@ node --test tests/operations.test.cjs
 Manual browser checks cover registration, duplicate rejection, referral attribution, input validation, persistence and CSV export. Layout checks passed at **390px and 1200px**. The growth plan contains **two pages**; the walkthrough is **three minutes**.
 
 ## Deploy
+
+The live project is hosted on **[Vercel](https://growthai-iota.vercel.app/)**. To deploy your own copy:
 
 Import this repository into Vercel with:
 
