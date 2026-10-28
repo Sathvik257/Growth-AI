@@ -1,6 +1,6 @@
 # Three-minute walkthrough script
 
-Synthetic narration is included in the MP4. For a personal application, use this shot plan to record the explanation in your own voice. Do not claim simulated registrations as real.
+Shot plan for the three-minute product walkthrough. The MP4 uses disclosed synthetic narration; all campaign results shown are simulated.
 
 ## 0:00 - 0:30 | 01 / THE PROBLEM
 This is Campus Relay, an AI-assisted prototype for the NxtWave growth challenge. The goal is five hundred final-year engineering student registrations in seven days, with a budget of two thousand rupees. The strategy starts with trusted campus networks. The target student wants a practical AI project they can explain in a placement interview. A clear project preview and a credible invitation should make registration more compelling. Every result shown here is simulated.

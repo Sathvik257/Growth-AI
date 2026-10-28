@@ -1,4 +1,4 @@
-# Reviewer Demo — Campus Relay
+# Demo Guide — Campus Relay
 
 This simulation shows the decision loop behind a seven-day campaign aiming for 500 registrations within Rs 2,000. It does not claim any real students were acquired.
 

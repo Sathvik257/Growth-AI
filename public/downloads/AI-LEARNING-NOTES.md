@@ -1,6 +1,6 @@
 # AI + Learning Notes — Campus Relay
 
-These are three real revisions from this AI-assisted build. Requests below summarize the user's challenge and follow-up checks; they are not fabricated chat quotations. No student interviews or live campaign outcomes are claimed. Review and personalize the explanation before presenting it as your experience.
+Three decisions from the AI-assisted development process, documented as request summaries, initial outputs and final revisions. The project is a simulation; no interviews or live campaign outcomes are claimed.
 
 ## 1. Fix a referral assumption that the copy did not support
 **What was asked:** Plan 500 registrations in seven days with Rs 2,000, then verify the plan against the challenge.
@@ -45,4 +45,4 @@ The first idea was a campus referral tracker with a registration page. The final
 Rejected the one-friend invitation paired with a two-visit assumption, the generic campaign advice presented without measurement inputs, and the supposedly conservative scenario with a higher referral conversion rate. Each could mislead an operator even though it sounded plausible. The changes above make the reasoning inspectable.
 
 ## Honesty about the prototype
-No real acquisition, campaign spending or outreach occurred. Email deduplication is local to one browser and is not identity verification. Hosting the static site does not create a shared database. The generated video uses synthetic narration; explaining the work in your own voice is recommended. The recording's instructions and Q&A were checked through its transcript. Vercel deployment is being handled by the applicant.
+No real acquisition, campaign spending or outreach occurred. Email deduplication is local to one browser and is not identity verification. Hosting the static site does not create a shared database. The walkthrough uses disclosed synthetic narration.
