@@ -110,12 +110,16 @@ vercel.json          # Static hosting configuration
 ## Verification
 
 ```bash
-node --test tests/operations.test.cjs
+node --test tests/*.test.cjs
 ```
 
-**Seven decision-logic tests** cover recovery math, activation, missing measurements, conversion, budget limits, the final campaign day and goal completion.
+**16 regression tests** cover registration, normalized-email duplicates, referral attribution, eligibility, consent, malformed saved data, failed storage writes, reset safety, cross-tab registration updates, HTML escaping, CSV protection and campaign decision logic. GitHub Actions runs the checks on pushes and pull requests.
+
+Storage errors produce a visible message without counting unsaved registrations. Unused channels do not block recommendations for channels with measured activity.
 
 Manual browser checks cover registration, duplicate rejection, referral attribution, input validation, persistence and CSV export. Layout checks passed at **390px and 1200px**. The growth plan contains **two pages**; the walkthrough is **three minutes**.
+
+After editing the source, rebuild the portable demo and downloadable package with `python scripts/package.py`.
 
 ## Deploy
 

@@ -4,3 +4,5 @@
 .ops-fields{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.conversion-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}@media(max-width:800px){.ops-fields{grid-template-columns:1fr 1fr}.conversion-grid{grid-template-columns:1fr}}
 
 .downloads{display:flex;gap:12px;flex-wrap:wrap}.downloads a{background:#e6ebdf;color:#163b34;border-radius:8px;padding:13px 16px;text-decoration:none;font-weight:600;font-size:13px}.downloads a:hover{background:#d7f96d}
+
+#appStatus:empty{display:none}#appStatus:not(:empty){padding:14px 18px;background:#fff2d5;border-left:3px solid #9c6b16;border-radius:6px}

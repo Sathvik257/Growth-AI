@@ -1,36 +1,175 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Campus Relay • Growth Lab</title><style>:root{--ink:#163b34;--muted:#64726b;--paper:#f5f5ee;--line:#dce2d8;--green:#d7f96d}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px 'DM Sans',Arial,sans-serif}header{display:flex;justify-content:space-between;align-items:center;padding:24px 6%;border-bottom:1px solid var(--line)}.brand{font:800 23px Manrope,Arial;color:var(--ink);text-decoration:none}.brand span{display:block;font:10px 'DM Sans',Arial;letter-spacing:2.2px;margin:5px 0 0 28px}.badge{font-size:10px;letter-spacing:1.2px;border:1px solid #bdc9bb;border-radius:30px;padding:9px 13px;white-space:nowrap}main{max-width:1240px;margin:auto;padding:0 36px}.intro{padding:52px 0 34px;background:radial-gradient(ellipse at 85% 30%,#e4edce,transparent 50%)}.eyebrow{font-size:11px;letter-spacing:2px;font-weight:700}h1{font:800 clamp(34px,4.4vw,60px)/1.13 Manrope,Arial;letter-spacing:-2.6px;margin:16px 0 22px}h1 em{font-style:normal;color:#698444}p{line-height:1.65;color:var(--muted)}nav{display:flex;gap:10px;border-bottom:1px solid var(--line);margin-bottom:30px;padding-bottom:15px}button{border:0;background:var(--ink);color:white;border-radius:8px;padding:13px 18px;font:600 13px 'DM Sans',Arial;cursor:pointer}button:hover{filter:brightness(1.13)}button:focus-visible,a:focus-visible{outline:3px solid #91aa43;outline-offset:3px}nav button{background:transparent;color:var(--muted)}nav .active{background:var(--ink);color:white}.section-title{display:flex;align-items:center;justify-content:space-between;gap:16px}h2{font:800 27px/1.3 Manrope,Arial;letter-spacing:-.8px;margin:8px 0 15px}h3{font:700 19px Manrope,Arial;margin:0 0 12px}.secondary{background:#e6ebdf;color:var(--ink)}.notice{font-size:12px;border-left:3px solid #99ad59;padding-left:12px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:24px 0}.metric{background:white;border:1px solid var(--line);border-radius:13px;padding:23px}.metric strong{display:block;font:800 36px Manrope;margin:8px 0}.metric small{color:var(--muted)}.grid{display:grid;grid-template-columns:1.2fr 1fr;gap:20px}article{background:white;border:1px solid var(--line);padding:28px;border-radius:14px;margin-bottom:22px}.dark{background:var(--ink);color:white}.dark p,.dark small{color:#d3dfd7}.dark .eyebrow{color:var(--green)}.dark li{margin-bottom:17px;line-height:1.6}.bar-row{margin:23px 0}.bar-label{display:flex;justify-content:space-between;margin-bottom:10px;font-size:13px}.track{height:9px;background:#eef1e9;border-radius:6px;overflow:hidden}.fill{height:100%;background:#9bbf49;border-radius:6px}.sliders{display:grid;grid-template-columns:1fr 1fr;gap:35px}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;text-align:left;font-size:12px}th,td{padding:13px 10px;border-bottom:1px solid var(--line)}th{color:var(--muted);font-weight:500}label{display:block;font-size:13px;font-weight:600;margin:16px 0 7px}input,select,textarea{display:block;width:100%;padding:12px;border:1px solid #cbd5cb;background:#fafbf8;border-radius:7px;font:14px 'DM Sans',Arial;color:var(--ink);margin:8px 0 15px}input[type=range]{padding:0;accent-color:var(--ink)}input[type=checkbox]{width:auto;margin:3px 0}.check{display:flex;gap:10px;font-weight:400;line-height:1.5}.danger{background:#f6e9e5;color:#9b3823;margin-top:16px}small{line-height:1.6;color:var(--muted)}footer{padding:24px 0 40px;color:var(--muted);font-size:11px;line-height:1.9}.timeline{padding-left:22px}.timeline li{padding:0 0 20px 10px;color:var(--muted);line-height:1.5}.timeline strong{display:block;color:var(--ink);margin-bottom:5px}#status{padding-top:15px;font-weight:600}#success{border-top:1px solid var(--line);margin-top:20px;padding-top:20px}[hidden]{display:none!important}@media(max-width:700px){header{padding:20px}.badge{white-space:normal;font-size:9px}main{padding:0 18px}.intro{padding-top:30px}h1{letter-spacing:-1.5px}.grid,.sliders{grid-template-columns:1fr}.metrics{grid-template-columns:1fr 1fr}.metric{padding:16px}.metric strong{font-size:28px}nav{gap:1px}nav button{padding:10px;font-size:11px}article{padding:21px}.section-title{align-items:flex-start;flex-wrap:wrap}}
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Campus Relay: a working referral tracker and campaign decision tool for a seven-day student acquisition simulation."><title>Campus Relay • Growth Lab</title><style>500;600;700&family=Manrope:wght@400;600;700;800&display=swap');
+:root{--ink:#163b34;--muted:#64726b;--paper:#f5f5ee;--line:#dce2d8;--green:#d7f96d}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px 'DM Sans',Arial,sans-serif}header{display:flex;justify-content:space-between;align-items:center;padding:24px 6%;border-bottom:1px solid var(--line)}.brand{font:800 23px Manrope,Arial;color:var(--ink);text-decoration:none}.brand span{display:block;font:10px 'DM Sans',Arial;letter-spacing:2.2px;margin:5px 0 0 28px}.badge{font-size:10px;letter-spacing:1.2px;border:1px solid #bdc9bb;border-radius:30px;padding:9px 13px;white-space:nowrap}main{max-width:1240px;margin:auto;padding:0 36px}.intro{padding:52px 0 34px;background:radial-gradient(ellipse at 85% 30%,#e4edce,transparent 50%)}.eyebrow{font-size:11px;letter-spacing:2px;font-weight:700}h1{font:800 clamp(34px,4.4vw,60px)/1.13 Manrope,Arial;letter-spacing:-2.6px;margin:16px 0 22px}h1 em{font-style:normal;color:#698444}p{line-height:1.65;color:var(--muted)}nav{display:flex;gap:10px;border-bottom:1px solid var(--line);margin-bottom:30px;padding-bottom:15px}button{border:0;background:var(--ink);color:white;border-radius:8px;padding:13px 18px;font:600 13px 'DM Sans',Arial;cursor:pointer}button:hover{filter:brightness(1.13)}button:focus-visible,a:focus-visible{outline:3px solid #91aa43;outline-offset:3px}nav button{background:transparent;color:var(--muted)}nav .active{background:var(--ink);color:white}.section-title{display:flex;align-items:center;justify-content:space-between;gap:16px}h2{font:800 27px/1.3 Manrope,Arial;letter-spacing:-.8px;margin:8px 0 15px}h3{font:700 19px Manrope,Arial;margin:0 0 12px}.secondary{background:#e6ebdf;color:var(--ink)}.notice{font-size:12px;border-left:3px solid #99ad59;padding-left:12px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:24px 0}.metric{background:white;border:1px solid var(--line);border-radius:13px;padding:23px}.metric strong{display:block;font:800 36px Manrope;margin:8px 0}.metric small{color:var(--muted)}.grid{display:grid;grid-template-columns:1.2fr 1fr;gap:20px}article{background:white;border:1px solid var(--line);padding:28px;border-radius:14px;margin-bottom:22px}.dark{background:var(--ink);color:white}.dark p,.dark small{color:#d3dfd7}.dark .eyebrow{color:var(--green)}.dark li{margin-bottom:17px;line-height:1.6}.bar-row{margin:23px 0}.bar-label{display:flex;justify-content:space-between;margin-bottom:10px;font-size:13px}.track{height:9px;background:#eef1e9;border-radius:6px;overflow:hidden}.fill{height:100%;background:#9bbf49;border-radius:6px}.sliders{display:grid;grid-template-columns:1fr 1fr;gap:35px}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;text-align:left;font-size:12px}th,td{padding:13px 10px;border-bottom:1px solid var(--line)}th{color:var(--muted);font-weight:500}label{display:block;font-size:13px;font-weight:600;margin:16px 0 7px}input,select,textarea{display:block;width:100%;padding:12px;border:1px solid #cbd5cb;background:#fafbf8;border-radius:7px;font:14px 'DM Sans',Arial;color:var(--ink);margin:8px 0 15px}input[type=range]{padding:0;accent-color:var(--ink)}input[type=checkbox]{width:auto;margin:3px 0}.check{display:flex;gap:10px;font-weight:400;line-height:1.5}.danger{background:#f6e9e5;color:#9b3823;margin-top:16px}small{line-height:1.6;color:var(--muted)}footer{padding:24px 0 40px;color:var(--muted);font-size:11px;line-height:1.9}.timeline{padding-left:22px}.timeline li{padding:0 0 20px 10px;color:var(--muted);line-height:1.5}.timeline strong{display:block;color:var(--ink);margin-bottom:5px}#status{padding-top:15px;font-weight:600}#success{border-top:1px solid var(--line);margin-top:20px;padding-top:20px}[hidden]{display:none!important}@media(max-width:700px){header{padding:20px}.badge{white-space:normal;font-size:9px}main{padding:0 18px}.intro{padding-top:30px}h1{letter-spacing:-1.5px}.grid,.sliders{grid-template-columns:1fr}.metrics{grid-template-columns:1fr 1fr}.metric{padding:16px}.metric strong{font-size:28px}nav{gap:1px}nav button{padding:10px;font-size:11px}article{padding:21px}.section-title{align-items:flex-start;flex-wrap:wrap}}
 
 .ops-fields{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.conversion-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}@media(max-width:800px){.ops-fields{grid-template-columns:1fr 1fr}.conversion-grid{grid-template-columns:1fr}}
+
+.downloads{display:flex;gap:12px;flex-wrap:wrap}.downloads a{background:#e6ebdf;color:#163b34;border-radius:8px;padding:13px 16px;text-decoration:none;font-weight:600;font-size:13px}.downloads a:hover{background:#d7f96d}
+
+#appStatus:empty{display:none}#appStatus:not(:empty){padding:14px 18px;background:#fff2d5;border-left:3px solid #9c6b16;border-radius:6px}
 </style></head><body>
-<header><a class="brand" href="#">◈ Campus Relay<span>NXTWAVE GROWTH LAB</span></a><div class="badge">SIMULATION · LOCAL PROTOTYPE</div></header>
-<main><div class="intro"><p class="eyebrow">7 DAYS / ₹2,000 / ONE CLEAR OUTCOME</p><h1>Small campus networks.<br><em>One big starting line.</em></h1><p>A practical growth system for “Build Your First AI Project in 60 Minutes”.<br>Plan the funnel. Attribute each registration. Learn where to focus next.</p></div>
+<header><a class="brand" href="#">◈ Campus Relay<span>NXTWAVE GROWTH LAB</span></a><div class="badge">SIMULATION · BROWSER-LOCAL DATA</div></header>
+<main><p id="appStatus" role="status" aria-live="polite"></p><div class="intro"><p class="eyebrow">7 DAYS / ₹2,000 / ONE CLEAR OUTCOME</p><h1>Small campus networks.<br><em>One big starting line.</em></h1><p>A practical growth system for “Build Your First AI Project in 60 Minutes”.<br>Plan the funnel. Attribute each registration. Learn where to focus next.</p></div>
 <nav aria-label="Views"><button data-view="dashboard" class="active">01 / Campaign desk</button><button data-view="register">02 / Student experience</button><button data-view="toolkit">03 / Ambassador kit</button></nav>
 <section id="dashboard"><div class="section-title"><div><p class="eyebrow">CAMPAIGN DESK</p><h2>Make the next move count.</h2></div><button id="seed" class="secondary">Load sample campaign</button></div><p class="notice">All data stays in this browser. Sample records and test registrations are not real students. No messages are sent.</p><div class="metrics" id="metrics"></div><div class="grid"><article><h3>Where registrations come from</h3><p>One registration, one source. Duplicate emails are excluded.</p><div id="channels"></div></article><article class="dark"><p class="eyebrow">NEXT BEST ACTION</p><h3 id="actionTitle"></h3><p id="action"></p><label for="day">Campaign day</label><select id="day"><option value="1">Day 1</option><option value="2">Day 2</option><option value="3" selected>Day 3</option><option value="4">Day 4</option><option value="5">Day 5</option><option value="6">Day 6</option><option value="7">Day 7</option></select><p id="pace"></p></article></div><article id="operations"><div class="section-title"><div><p class="eyebrow">MEASURE → DIAGNOSE → ACT</p><h3>Daily campaign check-in</h3></div><span class="badge">SIMULATION INPUTS</span></div><p>Enter cumulative figures from the same campaign period. An active ambassador has admin approval and has posted the invitation. Visits are manually entered unique visits per source, not measured by this prototype.</p><form id="opsForm"><div class="ops-fields"><label>Active ambassadors<input id="opsActive" type="number" min="0" max="20" step="1" value="0" required></label><label>Spend so far (Rs)<input id="opsSpend" type="number" min="0" max="2000" step="1" value="0" required></label><label>Campus unique visits<input id="opscampus" type="number" min="0" step="1" value="0" required></label><label>Referral unique visits<input id="opsreferral" type="number" min="0" step="1" value="0" required></label><label>Club/email unique visits<input id="opsclub" type="number" min="0" step="1" value="0" required></label></div><button type="submit">Update campaign diagnosis</button><p id="opsStatus" role="status" aria-live="polite"></p></form><p id="opsSummary"></p><div id="conversionRows" class="conversion-grid"></div><p id="recovery" class="notice"></p></article><article><div class="section-title"><h3>Stress-test the 500 target</h3><span class="badge">ASSUMPTIONS, NOT FORECASTS</span></div><div class="sliders"><label>Campus visit → registration <input id="campusRate" type="range" min="10" max="70" value="50"><output id="campusOut"></output></label><label>Referral visit → registration <input id="refRate" type="range" min="10" max="70" value="50"><output id="refOut"></output></label></div><p id="forecast"></p><small>Base inputs: 4,800 unique campus reach × 15% visit rate; 240 incremental referral visits; 80 incremental club/email visits × 50%. Overlap must be removed before applying these inputs.</small></article><article><div class="section-title"><h3>Registration ledger</h3><button id="export" class="secondary">Export CSV</button></div><div class="table-wrap"><table><thead><tr><th>Student</th><th>Campus</th><th>Source</th><th>Referral</th><th>Type</th></tr></thead><tbody id="ledger"></tbody></table></div><p id="ledgerNote"></p><button id="reset" class="danger">Clear this demo’s local data</button><div id="resetConfirm" hidden><p>Delete only Campus Relay sample and test records from this browser?</p><button id="confirmReset">Yes, clear records</button><button id="cancelReset" class="secondary">Cancel</button></div></article></section>
-<section id="register" hidden><div class="grid"><article class="dark"><p class="eyebrow">FREE ONLINE WORKSHOP · PROPOSED CONCEPT</p><h2>Build something you<br>can explain in an interview.</h2><p>Build Your First AI Project in 60 Minutes</p><ul><li>Start with a guided AI study-planner template.</li><li>Customize it for a real student problem.</li><li>Leave with a demo and a README outline.</li></ul><p>For final-year engineering students with basic computer skills. Bring a laptop and internet. No prior AI experience assumed.</p><small>Project, platform and prerequisites need host validation. Workshop date and time are not yet announced. This prototype does not reserve a real seat.</small></article><article><p class="eyebrow">TRY THE REGISTRATION FLOW</p><h2>Your first project starts here.</h2><form id="form"><label>Name<input name="name" required maxlength="60" placeholder="Demo Student"></label><label>Email<input name="email" type="email" required maxlength="120" placeholder="student@example.com"></label><label>College<input name="college" required maxlength="100" placeholder="Example Engineering College"></label><label>Study year<select name="year" required><option value="">Select study year</option><option value="final">Final-year engineering</option><option value="other">Other</option></select></label><label>Source<select name="source" id="source"><option value="campus">Campus WhatsApp / ambassador</option><option value="referral">Student referral</option><option value="club">Club / placement email</option></select></label><label>Referral code (optional)<input name="ref" id="ref" maxlength="20" placeholder="CAMPUS01"></label><label class="check"><input type="checkbox" name="consent" required> I understand this is a local demo. Use fictional details; data stays in this browser until cleared.</label><button type="submit">Create demo registration ↗</button></form><div id="status" role="status" aria-live="polite"></div><div id="success" hidden><h3>You’re in the demo.</h3><p>No real workshop seat or reminder has been created.</p><label>Your referral link<input id="personalLink" readonly></label><button id="copyPersonal" class="secondary">Copy referral link</button><p>Open this link in the same browser profile to test a second student. Localhost links cannot be shared with remote students.</p></div></article></div></section>
+<section id="register" hidden><div class="grid"><article class="dark"><p class="eyebrow">FREE ONLINE WORKSHOP · PROPOSED CONCEPT</p><h2>Build something you<br>can explain in an interview.</h2><p>Build Your First AI Project in 60 Minutes</p><ul><li>Start with a guided AI study-planner template.</li><li>Customize it for a real student problem.</li><li>Leave with a demo and a README outline.</li></ul><p>For final-year engineering students with basic computer skills. Bring a laptop and internet. No prior AI experience assumed.</p><small>Project, platform and prerequisites need host validation. Workshop date and time are not yet announced. This prototype does not reserve a real seat.</small></article><article><p class="eyebrow">TRY THE REGISTRATION FLOW</p><h2>Your first project starts here.</h2><form id="form"><label>Name<input name="name" required maxlength="60" placeholder="Demo Student"></label><label>Email<input name="email" type="email" required maxlength="120" placeholder="student@example.com"></label><label>College<input name="college" required maxlength="100" placeholder="Example Engineering College"></label><label>Study year<select name="year" required><option value="">Select study year</option><option value="final">Final-year engineering</option><option value="other">Other</option></select></label><label>Source<select name="source" id="source"><option value="campus">Campus WhatsApp / ambassador</option><option value="referral">Student referral</option><option value="club">Club / placement email</option></select></label><label>Referral code (optional)<input name="ref" id="ref" maxlength="20" placeholder="CAMPUS01"></label><label class="check"><input type="checkbox" name="consent" required> I understand this is a local demo. Use fictional details; data stays in this browser until cleared.</label><button type="submit">Create demo registration ↗</button></form><div id="status" role="status" aria-live="polite"></div><div id="success" hidden><h3>You’re in the demo.</h3><p>No real workshop seat or reminder has been created.</p><label>Your referral link<input id="personalLink" readonly></label><button id="copyPersonal" class="secondary">Copy referral link</button><p>Open this link in the same browser profile to test a second student. The site is shareable, but demo records and student referral validation stay in each browser.</p></div></article></div></section>
 <section id="toolkit" hidden><div class="section-title"><div><p class="eyebrow">AMBASSADOR KIT</p><h2>Make the invitation useful.</h2></div><span class="badge">DRAFT ONLY · NOTHING SENT</span></div><div class="grid"><article><h3>Build a tracked invitation</h3><label for="code">Ambassador code (3–20 letters or digits)</label><input id="code" value="CAMPUS01" maxlength="20"><label for="kitSource">Channel</label><select id="kitSource"><option value="campus">Campus WhatsApp</option><option value="club">Club / placement email</option></select><button id="generate">Generate draft</button><p id="kitStatus" role="status"></p><label for="invite">Message draft</label><textarea id="invite" rows="9" readonly></textarea><button id="copyInvite" class="secondary">Copy draft</button></article><article><h3>The 7-day operating rhythm</h3><ol class="timeline"><li><strong>Day 1 · Validate</strong>Interview 5 students; approach 60 campus contacts plus 10 reserves. Confirm host details.</li><li><strong>Day 2 · Activate</strong>Secure 20 opt-in ambassadors; run two message variants.</li><li><strong>Day 3 · Inspect</strong>Target 180 cumulative signups. Fix low conversion before expanding.</li><li><strong>Days 4–5 · Amplify</strong>Repeat winning copy in permitted groups; activate referrals.</li><li><strong>Day 6 · Recover</strong>Target 440. Ask approved backup clubs to close the measured gap.</li><li><strong>Day 7 · Close</strong>Target 500. Send opted-in reminders; audit duplicate registrations.</li></ol><p>Never scrape student numbers, spam groups, fabricate urgency or promise jobs. No incentive for raw signups.</p></article></div></section>
-<footer>Campus Relay / Independent challenge prototype · No official NxtWave affiliation claimed.<br>Built for a simulation. Real deployment needs shared storage, admin access control and email verification.</footer></main><script>const KEY='campus-relay-portable-v1';
-const channels={campus:{label:'Campus ambassadors',target:360},referral:{label:'Student referrals',target:120},club:{label:'Clubs / placement email',target:40}};
-let records=[];try{records=JSON.parse(localStorage.getItem(KEY)||'[]');if(!Array.isArray(records))records=[];}catch{records=[];}
-const $=id=>document.getElementById(id),escapeHTML=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-function save(){localStorage.setItem(KEY,JSON.stringify(records));render();}
-function show(view){for(const s of ['dashboard','register','toolkit'])$(s).hidden=s!==view;document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===view));}
-document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>show(b.dataset.view));
-function render(){let total=records.length,samples=records.filter(r=>r.sample).length;const day=+$('day').value,targets=[40,100,180,280,370,440,500],target=targets[day-1];$('metrics').innerHTML=[['Demo registrations',total,`${samples} sample + ${total-samples} manual tests`],['Target progress',Math.round(total/500*100)+'%','500 unique registrations'],['Remaining',Math.max(0,500-total),'to the campaign goal'],['Budget ceiling','₹2,000','Planned spend; not actual spend']].map(([l,n,s])=>`<div class="metric">${l}<strong>${n}</strong><small>${s}</small></div>`).join('');$('channels').innerHTML=Object.entries(channels).map(([key,c])=>{const n=records.filter(r=>r.source===key).length;return `<div class="bar-row"><div class="bar-label"><span>${c.label}</span><span>${n} / ${c.target}</span></div><div class="track"><div class="fill" style="width:${Math.min(100,n/c.target*100)}%"></div></div></div>`}).join('');$('actionTitle').textContent=total>=500?'Goal reached in the demo':total<target?'Close the gap before scaling.':'Keep the strongest channel moving.';$('action').textContent=total<target?'Check ambassador activation first. If fewer than 12 are active by Day 3, recruit from the 10-contact reserve. If visits convert below 35%, test clearer project proof and simplify the form.':'Ask active ambassadors for one permitted follow-up, then inspect unique referral registrations. Do not reward duplicate signups.';$('pace').textContent=`Day ${day} checkpoint: ${target} cumulative. Demo is ${Math.abs(total-target)} ${total<target?'behind':'ahead of'} this checkpoint.`;$('ledger').innerHTML=records.slice(-12).reverse().map(r=>`<tr><td>${escapeHTML(r.name)}</td><td>${escapeHTML(r.college)}</td><td>${escapeHTML(channels[r.source]?.label||r.source)}</td><td>${escapeHTML(r.ref||'Direct')}</td><td>${r.sample?'Sample':'Manual test'}</td></tr>`).join('')||'<tr><td colspan="5">No demo registrations yet. Try the student flow or load the sample campaign.</td></tr>';$('ledgerNote').textContent=`Showing latest ${Math.min(12,total)} of ${total}. Export includes all records.`;}
-$('day').onchange=render;
-$('seed').onclick=()=>{if(records.some(r=>r.sample)){alert('Sample campaign already loaded. Clear demo data to restart.');return;}for(let i=0;i<180;i++)records.push({name:`Sample student ${i+1}`,email:`sample${i+1}@example.invalid`,college:`Demo Campus ${i%20+1}`,source:i<130?'campus':i<165?'referral':'club',ref:i<130?`CAMPUS${String(i%20+1).padStart(2,'0')}`:'',code:`S${String(i+1).padStart(5,'0')}`,sample:true,created:new Date().toISOString()});save();};
-function forecast(){const a=+$('campusRate').value,b=+$('refRate').value,n=Math.round(720*a/100+240*b/100+40);$('campusOut').textContent=a+'%';$('refOut').textContent=b+'%';$('forecast').textContent=`${n} estimated registrations → ${n>=500?`${n-500} above`:`${500-n} below`} target. Base case is 520, leaving a 20-registration planning buffer.`;}
-$('campusRate').oninput=forecast;$('refRate').oninput=forecast;
-function link(source,ref){const u=new URL(location.href);u.search='';u.hash='';u.searchParams.set('source',source);u.searchParams.set('ref',ref);return u.href;}
-$('form').onsubmit=e=>{e.preventDefault();const d=new FormData(e.target),email=String(d.get('email')).trim().toLowerCase(),name=String(d.get('name')).trim(),college=String(d.get('college')).trim(),ref=String(d.get('ref')).trim().toUpperCase();$('success').hidden=true;if(!name||!college){$('status').textContent='Please enter a name and college.';return;}if(d.get('year')!=='final'){$('status').textContent='This campaign counts only final-year engineering students.';return;}if(records.some(r=>r.email===email)){$('status').textContent='This email is already registered in this browser. No duplicate counted.';return;}if(ref&&!/^[A-Z0-9]{3,20}$/.test(ref)){$('status').textContent='Use a referral code with 3–20 letters or digits.';return;}const source=d.get('source');if(source==='referral'&&(!ref||!records.some(r=>r.code===ref))){$('status').textContent='Student referral codes must belong to an existing registration in this browser.';return;}const code='R'+crypto.randomUUID().replace(/-/g,'').slice(0,10).toUpperCase();records.push({name,email,college,source,ref,code,sample:false,created:new Date().toISOString()});try{save();$('status').textContent='Demo registration saved successfully.';$('personalLink').value=link('referral',code);$('success').hidden=false;e.target.reset();}catch{records.pop();$('status').textContent='Browser storage is unavailable. Registration was not saved.';}};
-async function copy(value,id){try{await navigator.clipboard.writeText(value);$(id).textContent='Copied';}catch{$(id).textContent='Select the text and copy manually';}}
+<footer>Campus Relay / Independent challenge prototype · No official NxtWave affiliation claimed.<br>Built for a simulation. Real deployment needs shared storage, admin access control and email verification.</footer></main><script>const KEY = 'campus-relay-portable-v1';
+const channels = {
+  campus: { label: 'Campus ambassadors', target: 360 },
+  referral: { label: 'Student referrals', target: 120 },
+  club: { label: 'Clubs / placement email', target: 40 }
+};
+const $ = id => document.getElementById(id);
+const escapeHTML = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function report(message) { $('appStatus').textContent = message; }
+function readRecords() {
+  const raw = localStorage.getItem(KEY);
+  if (!raw) return [];
+  const parsed = JSON.parse(raw);
+  if (!Array.isArray(parsed)) throw new Error('Invalid saved campaign');
+  const emails = new Set(), codes = new Set();
+  return parsed.map(r => {
+    if (!r || !['name','email','college','source','ref','code','created'].every(k => typeof r[k] === 'string') ||
+        !r.name.trim() || !r.college.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(r.email.trim()) ||
+        !Object.hasOwn(channels, r.source) || !/^[A-Z0-9]{3,20}$/.test(r.code) || typeof r.sample !== 'boolean') {
+      throw new Error('Invalid saved registration');
+    }
+    const email = r.email.trim().toLowerCase();
+    if (emails.has(email) || codes.has(r.code)) throw new Error('Duplicate saved registration');
+    emails.add(email); codes.add(r.code);
+    return {...r, email};
+  });
+}
+let records = [];
+try { records = readRecords(); }
+catch { report('Saved data could not be read. Existing storage was left untouched. Clear this demo’s local data to start again, or enable browser storage.'); }
+function refreshRecords() {
+  try { records = readRecords(); return true; }
+  catch { report('Cannot read saved data. No changes were made. Clear the demo data or enable browser storage.'); return false; }
+}
+function save(next) {
+  try { localStorage.setItem(KEY, JSON.stringify(next)); }
+  catch { report('Browser storage is unavailable or full. No changes were saved.'); return false; }
+  records = next;
+  report('');
+  render();
+  return true;
+}
+function show(view) {
+  for (const id of ['dashboard','register','toolkit']) $(id).hidden = id !== view;
+  document.querySelectorAll('nav button').forEach(b => {
+    b.classList.toggle('active', b.dataset.view === view);
+    b.setAttribute('aria-pressed', String(b.dataset.view === view));
+  });
+}
+document.querySelectorAll('nav button').forEach(b => b.onclick = () => show(b.dataset.view));
+function render() {
+  const total = records.length, samples = records.filter(r => r.sample).length;
+  const day = +$('day').value, target = [40,100,180,280,370,440,500][day - 1];
+  $('metrics').innerHTML = [
+    ['Demo registrations',total,`${samples} sample + ${total-samples} manual tests`],
+    ['Target progress',Math.round(total/500*100)+'%','500 unique registrations'],
+    ['Remaining',Math.max(0,500-total),'to the campaign goal'],
+    ['Budget ceiling','₹2,000','Planned spend; not actual spend']
+  ].map(([label,note,detail]) => `<div class="metric">${label}<strong>${note}</strong><small>${detail}</small></div>`).join('');
+  $('channels').innerHTML = Object.entries(channels).map(([key,c]) => {
+    const n = records.filter(r => r.source === key).length;
+    return `<div class="bar-row"><div class="bar-label"><span>${c.label}</span><span>${n} / ${c.target}</span></div><div class="track"><div class="fill" style="width:${Math.min(100,n/c.target*100)}%"></div></div></div>`;
+  }).join('');
+  $('pace').textContent = `Day ${day} checkpoint: ${target} cumulative. Demo is ${Math.abs(total-target)} ${total<target?'behind':'ahead of'} this checkpoint.`;
+  $('ledger').innerHTML = records.slice(-12).reverse().map(r => `<tr><td>${escapeHTML(r.name)}</td><td>${escapeHTML(r.college)}</td><td>${escapeHTML(channels[r.source].label)}</td><td>${escapeHTML(r.ref || 'Direct')}</td><td>${r.sample?'Sample':'Manual test'}</td></tr>`).join('') || '<tr><td colspan="5">No demo registrations yet. Try the student flow or load the sample campaign.</td></tr>';
+  $('ledgerNote').textContent = `Showing latest ${Math.min(12,total)} of ${total}. Export includes all records.`;
+}
+$('day').onchange = render;
+$('seed').onclick = () => {
+  if (!refreshRecords()) return false;
+  if (records.some(r => r.sample)) { report('Sample campaign already loaded. Clear demo data to restart.'); return false; }
+  const samples = Array.from({length:180}, (_,i) => ({
+    name:`Sample student ${i+1}`, email:`sample${i+1}@example.invalid`, college:`Demo Campus ${i%20+1}`,
+    source:i<130?'campus':i<165?'referral':'club', ref:i<130?`CAMPUS${String(i%20+1).padStart(2,'0')}`:'',
+    code:`S${String(i+1).padStart(5,'0')}`, sample:true, created:new Date().toISOString()
+  }));
+  if (samples.some(s => records.some(r => r.email===s.email || r.code===s.code))) {
+    report('Sample identifiers conflict with existing test records. Export your records, then clear the demo before loading samples.'); return false;
+  }
+  return save([...records,...samples]);
+};
+function forecast() {
+  const a=+$('campusRate').value, b=+$('refRate').value, n=Math.round(720*a/100+240*b/100+40);
+  $('campusOut').textContent=a+'%'; $('refOut').textContent=b+'%';
+  $('forecast').textContent=`${n} estimated registrations → ${n>=500?`${n-500} above`:`${500-n} below`} target. Base case is 520, leaving a 20-registration planning buffer.`;
+}
+$('campusRate').oninput=forecast; $('refRate').oninput=forecast;
+function link(source,ref) {
+  const u=new URL(location.href); u.search=''; u.hash=''; u.searchParams.set('source',source); u.searchParams.set('ref',ref); return u.href;
+}
+const params = new URLSearchParams(location.search);
+function restoreAttribution() {
+  $('source').value = Object.hasOwn(channels,params.get('source')) ? params.get('source') : 'campus';
+  $('ref').value = params.get('ref') || '';
+}
+$('form').onsubmit = e => {
+  e.preventDefault();
+  if (!e.target.reportValidity()) return;
+  $('success').hidden=true;
+  if (!refreshRecords()) { $('status').textContent='Saved campaign could not be read. No registration was added.'; return; }
+  const d=new FormData(e.target), email=String(d.get('email')||'').trim().toLowerCase();
+  const name=String(d.get('name')||'').trim(), college=String(d.get('college')||'').trim();
+  const ref=String(d.get('ref')||'').trim().toUpperCase(), source=d.get('source');
+  let error='';
+  if (!name || !college || name.length>60 || college.length>100) error='Please enter a valid name and college.';
+  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length>120) error='Please enter a valid email address.';
+  else if (d.get('year')!=='final') error='This campaign counts only final-year engineering students.';
+  else if (!d.get('consent')) error='Please confirm that you understand this is a demo.';
+  else if (!Object.hasOwn(channels,source)) error='Please choose a valid source.';
+  else if (records.some(r=>r.email===email)) error='This email is already registered in this browser. No duplicate counted.';
+  else if (ref && !/^[A-Z0-9]{3,20}$/.test(ref)) error='Use a referral code with 3–20 letters or digits.';
+  else if (source==='referral' && (!ref || !records.some(r=>r.code===ref))) error='Student referral codes must belong to an existing registration in this browser.';
+  if (error) { $('status').textContent=error; return; }
+  let code;
+  do { code='R'+crypto.randomUUID().replace(/-/g,'').slice(0,10).toUpperCase(); } while (records.some(r=>r.code===code));
+  if (!save([...records,{name,email,college,source,ref,code,sample:false,created:new Date().toISOString()}])) {
+    $('status').textContent='Browser storage is unavailable. Registration was not saved.'; return;
+  }
+  $('status').textContent='Demo registration saved successfully.';
+  $('personalLink').value=link('referral',code); $('copyPersonal').textContent='Copy referral link'; $('success').hidden=false;
+  e.target.reset(); restoreAttribution();
+};
+async function copy(value,id) {
+  try { await navigator.clipboard.writeText(value); $(id).textContent='Copied'; }
+  catch { $(id).textContent='Select the text and copy manually'; }
+}
 $('copyPersonal').onclick=()=>copy($('personalLink').value,'copyPersonal');
-$('generate').onclick=()=>{const code=$('code').value.trim().toUpperCase();if(!/^[A-Z0-9]{3,20}$/.test(code)){$('kitStatus').textContent='Use 3–20 letters or digits.';return;}$('kitStatus').textContent='Draft ready. Confirm workshop details before any real distribution.';$('invite').value=`Final-year engineering students: want a first AI project you can explain in an interview?\n\nProposed free workshop: Build Your First AI Project in 60 Minutes. Follow a guided AI study-planner template and personalize it. Bring a laptop and internet; no prior AI experience assumed.\n\nDate/time: to be confirmed by the host.\nTry the registration demo: ${link($('kitSource').value,code)}\n\nSIMULATION: no real seat booking. This local link works only on this computer. Share only in groups where the admin has agreed.`;};
+$('generate').onclick=()=>{
+  const code=$('code').value.trim().toUpperCase();
+  if (!/^[A-Z0-9]{3,20}$/.test(code)) { $('kitStatus').textContent='Use 3–20 letters or digits.'; return; }
+  $('kitStatus').textContent='Draft ready. Confirm workshop details before any real distribution.';
+  $('copyInvite').textContent='Copy draft';
+  $('invite').value=`Final-year engineering students: want a first AI project you can explain in an interview?\n\nProposed free workshop: Build Your First AI Project in 60 Minutes. Follow a guided AI study-planner template and personalize it. Bring a laptop and internet; no prior AI experience assumed.\n\nDate/time: to be confirmed by the host.\nTry the registration demo: ${link($('kitSource').value,code)}\n\nSIMULATION: no real seat booking. This is a browser-local prototype; no shared student database is connected. Share only in groups where the admin has agreed.`;
+};
 $('copyInvite').onclick=()=>copy($('invite').value,'copyInvite');
-function csvCell(v){let s=String(v??'');if(/^[=+@\-\t\r]/.test(s))s="'"+s;return '"'+s.replace(/"/g,'""')+'"';}
-$('export').onclick=()=>{const fields=['name','email','college','source','ref','code','sample','created'];const csv=[fields.join(','),...records.map(r=>fields.map(f=>csvCell(r[f])).join(','))].join('\r\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'}));a.download='campus-relay-demo.csv';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);};
-$('reset').onclick=()=>$('resetConfirm').hidden=false;$('cancelReset').onclick=()=>$('resetConfirm').hidden=true;$('confirmReset').onclick=()=>{records=[];save();$('resetConfirm').hidden=true;$('success').hidden=true;$('status').textContent='Demo records cleared.';};
-const params=new URLSearchParams(location.search);if(channels[params.get('source')]){$('source').value=params.get('source');$('ref').value=params.get('ref')||'';show('register');}
-render();forecast();$('generate').click();
+function csvCell(v) { let s=String(v??''); if (/^[=+@\-\t\r\n]/.test(s)) s="'"+s; return '"'+s.replace(/"/g,'""')+'"'; }
+$('export').onclick=()=>{
+  if (!refreshRecords()) return;
+  render();
+  const fields=['name','email','college','source','ref','code','sample','created'];
+  const csv=[fields.join(','),...records.map(r=>fields.map(f=>csvCell(r[f])).join(','))].join('\r\n');
+  const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'}));
+  a.download='campus-relay-demo.csv'; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+};
+$('reset').onclick=()=>$('resetConfirm').hidden=false;
+$('cancelReset').onclick=()=>$('resetConfirm').hidden=true;
+$('confirmReset').onclick=()=>{
+  if (!save([])) return false;
+  $('resetConfirm').hidden=true; $('success').hidden=true; $('personalLink').value=''; $('status').textContent='Demo records cleared.';
+  return true;
+};
+window.addEventListener('storage', e=>{
+  if (e.key===KEY || e.key===null) { if (refreshRecords()) render(); }
+});
+restoreAttribution();
+show(Object.hasOwn(channels,params.get('source'))?'register':'dashboard');
+render(); forecast(); $('generate').click();
 </script><script>(function () {
   'use strict';
   const checkpoints = [40, 100, 180, 280, 370, 440, 500];
@@ -44,8 +183,9 @@ render();forecast();$('generate').click();
     if (total >= 500) return {...result, title: 'Audit the goal before celebrating.', action: 'Check unique eligible registrations and source attribution. Attendance is a separate downstream metric.'};
     if (input.spend >= 2000) return {...result, title: 'Budget limit reached.', action: 'Stop new spending. Use approved organic follow-ups and inspect conversion; the contingency is already included in the Rs 2,000 cap.'};
     if (day >= 3 && input.active < 12) return {...result, title: 'Fix distribution coverage first.', action: `${input.active} of 20 ambassadors are active. Contact the reserve; prioritize admins who have approved sharing and posted the invitation. Do not count a verbal yes as activation.`};
-    if (Object.values(rates).some(v => v === null)) return {...result, title: 'Complete the measurement before deciding.', action: 'Enter cumulative unique visits for every channel with activity. Missing visits or visits below registrations cannot support a conversion claim.'};
-    const low = Object.entries(rates).filter(([,v]) => v < 0.35).sort((a,b)=>a[1]-b[1]);
+    if (Object.entries(rates).some(([k,v]) => v === null && input.counts[k] > 0) ||
+        !Object.values(rates).some(v => v !== null)) return {...result, title: 'Complete the measurement before deciding.', action: 'Enter cumulative unique visits for every channel with activity. Missing visits or visits below registrations cannot support a conversion claim.'};
+    const low = Object.entries(rates).filter(([,v]) => v !== null && v < 0.35).sort((a,b)=>a[1]-b[1]);
     if (low.length) return {...result, title: 'Fix the weakest conversion path.', action: `${low[0][0]} converts at ${(low[0][1]*100).toFixed(1)}%. Check project proof, date/time clarity and form friction. Test revised copy before adding more reach; rates below 35% are a diagnostic trigger, not a universal benchmark.`};
     if (day >= 6 && total < checkpoints[day-1]) return {...result, title: 'Quantify the recovery before expanding.', action: `Need ${remaining} more registrations, or ${result.daily} per day including today. At the planning rates of 15% visits and 50% conversion, that needs about ${result.extraReach.toLocaleString()} additional unique people reached. Check access with backup clubs; if unavailable, report the miss.`};
     return {...result, title: 'Keep the best invitation moving.', action: 'Use one permitted reminder and invite two suitable friends per sharer. Keep audiences incremental and preserve first successful registration attribution.'};
@@ -87,9 +227,19 @@ render();forecast();$('generate').click();
     try{localStorage.setItem(key,JSON.stringify(next));state=next;render();$('opsStatus').textContent='Campaign check-in saved. Recommendation updated.';}catch{$('opsStatus').textContent='Storage unavailable; check-in was not saved.';}
   };
   const seed=$('seed').onclick;
-  $('seed').onclick=()=>{const already=records.some(r=>r.sample);seed();if(!already){state={active:12,spend:350,visits:{campus:300,referral:85,club:35},sample:true};try{localStorage.setItem(key,JSON.stringify(state));}catch{}populate();render();}};
+  $('seed').onclick=()=>{
+    if (!seed()) return;
+    const next={active:12,spend:350,visits:{campus:300,referral:85,club:35},sample:true};
+    for(const k of ['campus','referral','club']) next.visits[k]=Math.max(next.visits[k],records.filter(r=>r.source===k).length);
+    try {localStorage.setItem(key,JSON.stringify(next));state=next;populate();render();}
+    catch {$('opsStatus').textContent='Sample registrations saved, but check-in storage failed. Enter and save the check-in separately.';}
+  };
   const reset=$('confirmReset').onclick;
-  $('confirmReset').onclick=()=>{reset();state={active:0,spend:0,visits:{campus:0,referral:0,club:0},sample:false};localStorage.removeItem(key);populate();render();$('opsStatus').textContent='Campaign check-in cleared.';};
+  $('confirmReset').onclick=()=>{
+    if (!reset()) return;
+    try {localStorage.removeItem(key);state={active:0,spend:0,visits:{campus:0,referral:0,club:0},sample:false};populate();render();$('opsStatus').textContent='Campaign check-in cleared.';}
+    catch {$('opsStatus').textContent='Registrations cleared, but saved check-in could not be removed. Please retry clearing the demo.';}
+  };
   populate();update();
 })();
 </script></body></html>

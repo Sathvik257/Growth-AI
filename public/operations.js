@@ -11,8 +11,9 @@
     if (total >= 500) return {...result, title: 'Audit the goal before celebrating.', action: 'Check unique eligible registrations and source attribution. Attendance is a separate downstream metric.'};
     if (input.spend >= 2000) return {...result, title: 'Budget limit reached.', action: 'Stop new spending. Use approved organic follow-ups and inspect conversion; the contingency is already included in the Rs 2,000 cap.'};
     if (day >= 3 && input.active < 12) return {...result, title: 'Fix distribution coverage first.', action: `${input.active} of 20 ambassadors are active. Contact the reserve; prioritize admins who have approved sharing and posted the invitation. Do not count a verbal yes as activation.`};
-    if (Object.values(rates).some(v => v === null)) return {...result, title: 'Complete the measurement before deciding.', action: 'Enter cumulative unique visits for every channel with activity. Missing visits or visits below registrations cannot support a conversion claim.'};
-    const low = Object.entries(rates).filter(([,v]) => v < 0.35).sort((a,b)=>a[1]-b[1]);
+    if (Object.entries(rates).some(([k,v]) => v === null && input.counts[k] > 0) ||
+        !Object.values(rates).some(v => v !== null)) return {...result, title: 'Complete the measurement before deciding.', action: 'Enter cumulative unique visits for every channel with activity. Missing visits or visits below registrations cannot support a conversion claim.'};
+    const low = Object.entries(rates).filter(([,v]) => v !== null && v < 0.35).sort((a,b)=>a[1]-b[1]);
     if (low.length) return {...result, title: 'Fix the weakest conversion path.', action: `${low[0][0]} converts at ${(low[0][1]*100).toFixed(1)}%. Check project proof, date/time clarity and form friction. Test revised copy before adding more reach; rates below 35% are a diagnostic trigger, not a universal benchmark.`};
     if (day >= 6 && total < checkpoints[day-1]) return {...result, title: 'Quantify the recovery before expanding.', action: `Need ${remaining} more registrations, or ${result.daily} per day including today. At the planning rates of 15% visits and 50% conversion, that needs about ${result.extraReach.toLocaleString()} additional unique people reached. Check access with backup clubs; if unavailable, report the miss.`};
     return {...result, title: 'Keep the best invitation moving.', action: 'Use one permitted reminder and invite two suitable friends per sharer. Keep audiences incremental and preserve first successful registration attribution.'};
@@ -54,8 +55,18 @@
     try{localStorage.setItem(key,JSON.stringify(next));state=next;render();$('opsStatus').textContent='Campaign check-in saved. Recommendation updated.';}catch{$('opsStatus').textContent='Storage unavailable; check-in was not saved.';}
   };
   const seed=$('seed').onclick;
-  $('seed').onclick=()=>{const already=records.some(r=>r.sample);seed();if(!already){state={active:12,spend:350,visits:{campus:300,referral:85,club:35},sample:true};try{localStorage.setItem(key,JSON.stringify(state));}catch{}populate();render();}};
+  $('seed').onclick=()=>{
+    if (!seed()) return;
+    const next={active:12,spend:350,visits:{campus:300,referral:85,club:35},sample:true};
+    for(const k of ['campus','referral','club']) next.visits[k]=Math.max(next.visits[k],records.filter(r=>r.source===k).length);
+    try {localStorage.setItem(key,JSON.stringify(next));state=next;populate();render();}
+    catch {$('opsStatus').textContent='Sample registrations saved, but check-in storage failed. Enter and save the check-in separately.';}
+  };
   const reset=$('confirmReset').onclick;
-  $('confirmReset').onclick=()=>{reset();state={active:0,spend:0,visits:{campus:0,referral:0,club:0},sample:false};localStorage.removeItem(key);populate();render();$('opsStatus').textContent='Campaign check-in cleared.';};
+  $('confirmReset').onclick=()=>{
+    if (!reset()) return;
+    try {localStorage.removeItem(key);state={active:0,spend:0,visits:{campus:0,referral:0,club:0},sample:false};populate();render();$('opsStatus').textContent='Campaign check-in cleared.';}
+    catch {$('opsStatus').textContent='Registrations cleared, but saved check-in could not be removed. Please retry clearing the demo.';}
+  };
   populate();update();
 })();

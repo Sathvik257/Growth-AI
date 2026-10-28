@@ -9,3 +9,5 @@ test('conversion bottleneck takes priority over reach expansion',()=>assert.matc
 test('budget ceiling stops further spending',()=>assert.match(assess({...base,spend:2000}).title,/Budget limit/));
 test('day seven includes one day, preventing divide by zero',()=>{const a=assess({...base,day:7,total:440});assert.equal(a.daily,60);assert.equal(a.extraReach,800);});
 test('goal met triggers audit, with no negative gap',()=>{const a=assess({...base,total:520});assert.equal(a.remaining,0);assert.equal(a.daily,0);assert.match(a.title,/Audit/);});
+test('unused channels do not block measured active channels',()=>{const a=assess({...base,counts:{campus:130,referral:0,club:0},visits:{campus:300,referral:0,club:0}});assert.equal(a.rates.referral,null);assert.match(a.title,/recovery/);});
+test('visits without registrations are zero conversion rather than missing data',()=>{const a=assess({...base,counts:{campus:0,referral:0,club:0},visits:{campus:10,referral:0,club:0}});assert.equal(a.rates.campus,0);assert.match(a.title,/weakest conversion/);});
