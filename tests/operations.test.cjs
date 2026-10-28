@@ -1,0 +1,11 @@
+const test=require('node:test');
+const assert=require('node:assert/strict');
+const {assess}=require('../public/operations.js');
+const base={day:6,total:180,active:12,spend:350,counts:{campus:130,referral:35,club:15},visits:{campus:300,referral:85,club:35}};
+test('recovery quantifies remaining registrations, days and required reach',()=>{const a=assess(base);assert.equal(a.daily,160);assert.equal(a.extraReach,4267);assert.match(a.title,/recovery/);assert.equal(a.budgetLeft,1650);});
+test('activation gap takes priority over more distribution',()=>assert.match(assess({...base,active:5}).title,/coverage/));
+test('unknown or inconsistent visit counts do not fabricate conversion',()=>{const a=assess({...base,visits:{campus:0,referral:30,club:35}});assert.equal(a.rates.campus,null);assert.equal(a.rates.referral,null);assert.match(a.title,/measurement/);});
+test('conversion bottleneck takes priority over reach expansion',()=>assert.match(assess({...base,visits:{campus:1000,referral:85,club:35}}).action,/13.0%/));
+test('budget ceiling stops further spending',()=>assert.match(assess({...base,spend:2000}).title,/Budget limit/));
+test('day seven includes one day, preventing divide by zero',()=>{const a=assess({...base,day:7,total:440});assert.equal(a.daily,60);assert.equal(a.extraReach,800);});
+test('goal met triggers audit, with no negative gap',()=>{const a=assess({...base,total:520});assert.equal(a.remaining,0);assert.equal(a.daily,0);assert.match(a.title,/Audit/);});

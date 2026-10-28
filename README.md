@@ -9,7 +9,9 @@ Serve `public/` with a static web server: `python -m http.server 8766 --director
 Import this repository with the Other framework preset, no build command, and `public` as the output directory. Configuration is in `vercel.json`. Alternatively, run `npx vercel --prod` after signing in.
 
 ## Features
-Fictional registration, final-year eligibility checks, normalized-email deduplication, personal referral links, source attribution, local persistence, daily checkpoints, conversion calculator, invitation drafts and CSV export.
+Fictional registration, final-year eligibility checks, normalized-email deduplication, personal referral links, source attribution, local persistence, daily checkpoints, conversion calculator, invitation drafts and CSV export. The daily campaign check-in diagnoses activation, measurement, conversion, budget and late-campaign recovery using explicitly entered simulation inputs.
+
+See [the reviewer demo guide](public/downloads/DEMO-GUIDE.md). Run `node --test tests/operations.test.cjs` for decision-logic checks. Deployment is left to the repository owner.
 
 ## Submission materials
 - [Two-page growth plan](public/downloads/Growth-Plan.pdf)
